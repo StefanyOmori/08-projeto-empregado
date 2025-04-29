@@ -7,11 +7,27 @@ public class Util {
     private Controle controle = new Controle();
 
     public void menu() {
-        inserir();
-        inserir();
-        pesquisar();
-        pesquisar();
-        listar();
+        int opcao;
+        String aux = "1. Cadastrar\n2. Pesquisar\n3. Listar\n4. Finalizar";
+        while (true){
+            opcao = parseInt(showInputDialog(aux));
+            if (opcao==4){
+                return;
+            }
+            switch (opcao){
+                case 1:
+                    inserir();
+                    break;
+                case 2:
+                    pesquisar();
+                    break;
+                case 3:
+                    listar();
+                    break;
+                default:
+                    showMessageDialog(null,"Opção inválida");
+            }
+        }
     }
 
     private void inserir(){
